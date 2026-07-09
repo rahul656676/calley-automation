@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CalleyAutomationSuite" parallel="none" verbose="1">
+    <test name="CalleyTeamAccountSetup">
+        <classes>
+            <!-- <class name="com.calley.automation.tests.RegistrationTest"/> -->
+            <class name="com.calley.automation.tests.LoginTest"/>
+            <class name="com.calley.automation.tests.AddAgentTest"/>
+            <class name="com.calley.automation.tests.PowerImportCsvUploadTest"/>
+        </classes>
+    </test>
+</suite>

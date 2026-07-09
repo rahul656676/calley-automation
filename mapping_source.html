@@ -1,0 +1,1707 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" style=""><head>
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" src="https://cdn.taboola.com/scripts/eid.es5.js" charset="UTF-8" async="async"></script><script type="text/javascript" src="https://cdn.taboola.com/scripts/cds-pips.js?dc=am&amp;d=d" charset="UTF-8" async="async"></script><script type="text/javascript" async="" src="https://cdn.pagesense.io/js/cstech/d542d95a7c334e378654c9b3e7287424.js"></script><script src="https://connect.facebook.net/signals/config/3861839740717018?v=2.9.349&amp;r=stable&amp;domain=app.getcalley.com&amp;hme=f29d86973612db0f0627890a64bdc8c47b471189050b33f2680b7d76997afc9a&amp;ex_m=107%2C208%2C158%2C22%2C73%2C74%2C149%2C69%2C68%2C11%2C167%2C93%2C16%2C141%2C130%2C39%2C76%2C81%2C137%2C163%2C169%2C8%2C4%2C5%2C7%2C6%2C3%2C94%2C104%2C170%2C175%2C222%2C30%2C75%2C234%2C233%2C232%2C23%2C33%2C55%2C106%2C61%2C10%2C64%2C100%2C101%2C102%2C108%2C133%2C31%2C29%2C135%2C136%2C132%2C131%2C159%2C77%2C162%2C160%2C161%2C50%2C60%2C126%2C15%2C166%2C45%2C279%2C280%2C278%2C26%2C27%2C28%2C48%2C150%2C78%2C115%2C18%2C20%2C44%2C40%2C42%2C41%2C86%2C95%2C99%2C113%2C148%2C151%2C46%2C114%2C24%2C21%2C122%2C70%2C36%2C153%2C152%2C154%2C145%2C143%2C25%2C35%2C59%2C112%2C165%2C71%2C17%2C156%2C117%2C84%2C67%2C19%2C88%2C89%2C119%2C87%2C139%2C138%2C142%2C164%2C34%2C293%2C309%2C215%2C204%2C62%2C205%2C203%2C312%2C303%2C52%2C216%2C110%2C134%2C83%2C124%2C54%2C47%2C49%2C116%2C123%2C129%2C128%2C58%2C65%2C63%2C155%2C79%2C80%2C118%2C37%2C32%2C53%2C56%2C103%2C168%2C1%2C127%2C14%2C125%2C12%2C2%2C57%2C96%2C66%2C121%2C92%2C91%2C171%2C172%2C97%2C98%2C9%2C105%2C51%2C146%2C90%2C82%2C72%2C120%2C109%2C43%2C147%2C0%2C85%2C140%2C144%2C157%2C38%2C111%2C13%2C173" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://cdn.taboola.com/libtrc/unip/1193154/tfa.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-NNE1VJW3BQ&amp;cx=c&amp;gtm=4e6771"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KNK69N6"></script><script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KNK69N6');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="assets/images/favicon.ico"><title>
+	Getcalley - Map Data
+</title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/style.css?v9.9" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="assets/js/modernizr.min.js"></script>
+
+
+
+    <link href="css/sweetalert.css?v5" rel="stylesheet">
+    <script src="Scripts/Sweetalert.js"></script>
+
+    
+
+    
+    <style>
+        .wrapper {
+            padding-top: 0 !important;
+        }
+
+        #topnav {
+            position: relative !important;
+        }
+
+        .alert-top {
+            padding: 10px 1%;
+            background-image: linear-gradient(to left, rgb(226, 78, 30), rgb(226, 78, 3), rgb(232, 79, 1), rgb(252, 124, 0), rgb(246, 157, 70), rgb(245, 146, 49), rgb(253, 137, 25), rgb(247, 142, 56), rgb(241, 123, 25), rgb(241, 109, 0), rgb(226, 78, 30), rgb(213, 52, 0));
+            background-size: inherit;
+            background-color: rgb(241, 109, 0);
+            color: rgb(255, 255, 255);
+            position: relative;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .closebtn:hover {
+                color: black;
+            }
+
+        #nav {
+            list-style: none inside;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #topnav .navigation-menu > li > a {
+            letter-spacing: .5px;
+        }
+
+        #nav li {
+            display: block;
+            position: relative;
+            float: left;
+            /* menu background color */
+        }
+
+            #nav li a {
+                display: block;
+                padding: 0;
+                text-decoration: none;
+                /* this is the width of the menu items */
+                /* line-height: 35px;*/
+                /* this is the hieght of the menu items */
+                color: #000000;
+                /* list item font color */
+            }
+
+            #nav li li a {
+                font-size: 15px;
+                text-align: left;
+            }
+
+            /* smaller font size for sub menu items */
+
+            #nav li:hover {
+                color: #2ea3f2;
+            }
+
+        /* highlights current hovered list item and the parent list items when hovering over sub menues */
+
+        #nav ul {
+            position: absolute;
+            padding: 0;
+            left: 0;
+            display: none;
+            margin-top: 2px;
+            /* hides sublists */
+        }
+
+        #nav li:hover ul ul {
+            display: none;
+        }
+
+        /* hides sub-sublists */
+
+        #nav li:hover ul {
+            display: block;
+            background: #fff;
+            box-shadow: 0 0 24px 0 rgb(43 61 81 / 6%), 0 1px 0 0 rgb(43 61 81 / 2%);
+            border: 1px solid rgba(43, 61, 81, .05);
+            width: 236px !important;
+            padding: 8px 15px;
+        }
+
+            #nav li:hover ul li {
+                width: 100%;
+                padding: 3px 0px;
+            }
+
+            #nav li:hover ul::before {
+                content: '';
+                border: 8px solid transparent;
+                border-bottom-color: #fff;
+                position: absolute;
+                top: -16px;
+                right: 163px;
+                z-index: 5;
+            }
+
+            #nav li:hover ul ul::before {
+                content: '';
+                border: 8px solid transparent;
+                /* border-bottom-color: #fff; */
+                position: absolute;
+                top: 4px;
+                right: 235px;
+                z-index: 5;
+                border-right-color: #fff;
+            }
+
+        /* shows sublist on hover */
+
+        #nav li li:hover ul {
+            display: block;
+            /* shows sub-sublist on hover */
+            margin-left: 200px;
+            /* this should be the same width as the parent list item */
+            margin-top: -35px;
+            /* aligns top of sub menu with top of list item */
+        }
+
+        #nav li a span {
+            font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            font-size: 15px;
+        }
+
+
+        #nav li:hover ul.megamenu {
+            display: block;
+            background: #ffffff;
+            box-shadow: 0 0 24px 0 rgb(43 61 81 / 6%), 0 1px 0 0 rgb(43 61 81 / 2%);
+            border: 1px solid rgba(43, 61, 81, .05);
+            width: 500px !important;
+            padding: 8px 15px;
+        }
+
+            #nav li:hover ul.megamenu li {
+                width: 50%;
+                padding: 3px 0px;
+            }
+
+            #nav li:hover ul.megamenu::before {
+                content: '';
+                border: 8px solid transparent;
+                border-bottom-color: #fff;
+                position: absolute;
+                top: -16px;
+                right: 425px;
+                z-index: 5;
+            }
+    </style>
+    <style>
+        span.search input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        span.search button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+            span.search button:hover {
+                background: #0b7dda;
+            }
+
+        span.search::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+
+            .sidenav a {
+                padding: 10px 8px 10px 22px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: -18px;
+                right: 0px;
+                font-size: 55px;
+                margin-left: 50px;
+                z-index: 1;
+                color: #000;
+            }
+
+
+
+
+        .sidenav {
+            padding-top: 0px;
+            margin-top: 60px;
+        }
+
+            .sidenav a {
+                color: #707070;
+                font-size: 15px;
+                font-weight: 500;
+            }
+
+        .openBtn {
+            background: none;
+            color: #fff;
+            position: relative;
+            top: 0px;
+            border: none;
+            padding: 0px 0px 0px 20px;
+            /*font-size: 20px;*/
+            cursor: pointer;
+            right: 0px;
+            line-height: 60px;
+            /* margin-right: 0;
+            margin-left: 20px;*/
+            float: left;
+        }
+
+        .header-notification, .waves-light {
+            padding: 0px 0px 0px 20px;
+        }
+
+            .openBtn i, .header-notification i, .waves-light i {
+                font-size: 20px;
+            }
+
+        .openBtn:hover {
+            background: none;
+        }
+
+        .dropdown-b {
+            background: none;
+            color: #fff;
+            position: relative;
+            top: 1px;
+            /*left: 20px;*/
+            border: none;
+            /*padding: 9px 0px;
+            font-size: 20px;*/
+            cursor: pointer;
+            /*right: 0px;
+            margin-right: 0;
+            margin-left: 20px;*/
+            display: flex;
+            line-height: 60px;
+        }
+
+            .dropdown-b a {
+                color: #fff;
+            }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 111;
+            top: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 28%;
+            width: 45%;
+            text-align: center;
+            margin-top: 30px;
+            margin: auto;
+        }
+
+            .overlay-content a {
+                background: #ff014b;
+            }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+        }
+
+            .overlay .closebtn:hover {
+                color: #ccc;
+            }
+
+        .overlay input[type=text] {
+            padding: 15px;
+            font-size: 17px;
+            border: none;
+            float: left;
+            width: 100%;
+            background: white;
+            border-radius: 6px;
+        }
+
+            .overlay input[type=text]:hover {
+                background: #f1f1f1;
+            }
+
+        .overlay button {
+            float: left;
+            width: 100%;
+            padding: 15px;
+            background: #7C0000;
+            color: #fff;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+            .overlay button:hover {
+                background: #bbb;
+            }
+
+
+        #news {
+            margin: 10px 0px 0px 15px;
+            color: #fff;
+            position: relative;
+            top: 5px;
+        }
+
+        .alert_list {
+            font-size: 11px;
+            color: grey
+        }
+
+        li.alert_li {
+            font-size: 11px;
+            color: grey;
+            padding: 10px 0px 2px 0px;
+            border-bottom: thin solid #c0c0c0;
+        }
+
+            li.alert_li:hover {
+                background-color: #eee
+            }
+
+        .turn_off_alert {
+            float: right;
+            margin-bottom: 1px
+        }
+
+        a.alert_message {
+            color: grey
+        }
+
+            a.alert_message:hover {
+                color: grey
+            }
+
+        .popover-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /*#MobileSearch {
+            width: 115px;
+        }*/
+
+        .notification-list .dropdown-menu::before {
+            right: 25px !important;
+        }
+
+        .dropdown-b .dropdown-menu::before {
+            right: 60px !important;
+        }
+
+        .list-inline-item:not(:last-child) {
+        }
+
+        .spuseremail {
+            width: 100%;
+        }
+
+        #feedbacklabel {
+            display: none !important;
+        }
+
+        .desk-view {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .dropdown-b .dropdown-menu {
+                width: 300px;
+                top: 17% !important;
+                right: 0px !important;
+                left: 0px !important;
+            }
+
+            .sidenav {
+                padding-top: 0px;
+                margin-top: 68px;
+            }
+
+            .desk-view {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chatbot {
+                display: none !important;
+            }
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "345px";
+            //document.getElementById("wrapper").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.8)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            //document.getElementById("wrapper").style.marginLeft = "0";
+            document.body.style.backgroundColor = "#f6f6f6";
+        }
+    </script>
+    <script>
+        var $ = jQuery.noConflict();
+        $(document).ready(
+            function () {
+                $("#sal-search").click(function () {
+                    $("#sal-box").fadeToggle();
+                });
+                $("#sal-hide").click(function () {
+                    $("#sal-box").fadeToggle();
+                });
+
+                //$("#news").popover({
+                //    'title': 'Notifiche',
+                //    'html': true,
+                //    'placement': 'bottom',
+                //    'content': $(".alert_list").html()
+                //});
+
+                //$('.turn_off_alert').live('click', function (event) {
+                // var alert = $(this).parent();
+                //  var alert_id = alert.data("alert_id");
+                // alert.hide("fast");
+
+                //});
+
+            });
+    </script>
+
+    <script>
+        var $ = jQuery.noConflict();
+        function openSearch() {
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function closeSearch() {
+            document.getElementById("myOverlay").style.display = "none";
+        }
+        $(document).keydown(function (event) {
+            if (event.keyCode == 27) {
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        });
+    </script>
+    <script>
+        $(window).load(function () {
+            if ('Rahul' != "admin" && '212890' != "124") {
+                if ('Calley for Teams' == "Calley Personal" && (document.location.pathname.indexOf('dashboard.aspx') > -1 || document.location.pathname.indexOf('getting-started.aspx') > -1)) {
+                    var script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'https://my.hellobar.com/94471a3dea2ab89cebae5f0647d1ff72b17a2540.js';
+                    script.charset = 'utf-8'
+                    //script.async = 'async'
+                    document.head.appendChild(script);
+                }
+            }
+        });
+    </script>
+    
+
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"></script>
+    <script>
+        if (document.location.pathname.indexOf('dashboard.aspx') > -1 || document.location.pathname.indexOf('dashboard_agent.aspx') > -1
+            || document.location.pathname.indexOf('dashboard_pro.aspx') > -1 || document.location.pathname.indexOf('dashboard_teams.aspx') > -1) {
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            OneSignalDeferred.push(function (OneSignal) {
+                OneSignal.init({
+                    appId: "792b8cfb-4e17-4d03-8714-e3c5ae3765af",
+                });
+                OneSignal.User.PushSubscription.optedIn;
+                OneSignal.User.PushSubscription.id;
+                OneSignal.User.PushSubscription.optIn();
+                //OneSignal.Notifications.requestPermission();
+                //OneSignal.Notifications.addEventListener("click", eventListener);
+            });
+
+            $(window).load(function () {
+                if ($("#hdn_HasWebGcmID").val() == "0") {
+                    let permission = OneSignal.Notifications.permission; // boolean
+                    console.log(permission);
+                    var subsid = OneSignal.User.PushSubscription.id;
+                    console.log(subsid);
+                    var IsOptedIn = OneSignal.User.PushSubscription.optedIn;
+                    console.log(IsOptedIn);
+                    if (IsOptedIn && subsid != undefined && subsid != null)
+                        SaveOneSignalAppID(subsid);
+                }
+            });
+
+            //function eventListener(event) {
+            //    console.log(`${event}`);
+            //}
+
+            function SaveOneSignalAppID(subsid) {
+                if ($("#hdn_HasWebGcmID").val() == "0") {
+                    $.ajax({
+                        url: 'Handler/AddWebGcmID.ashx?subsid=' + subsid,
+                        contentType: 'json',
+                        method: 'Post',
+                        success: function (data) {
+                        },
+                        failure: function (data) {
+
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap"></head>
+
+<body class=" stop-scrolling">
+    <form method="post" action="./BulkcopyColumnMap.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="9wfFPfB2LemoaADwg0VTjKAjBMesCIupE6MzT9F0IlJoWW2o+tgTwzOVLIeOsRkh/N/DuWlX0F0EBvDghIlurKRrWLA=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F367C07E">
+</div>
+        <input type="hidden" name="ctl00$hdn_HasWebGcmID" id="hdn_HasWebGcmID" value="0">
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNK69N6"
+                height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+
+        <!-- Navigation Bar-->
+        <div id="divSubscriptionNotExpired" class="alert-top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px; margin-right: 10px; float: left;">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            
+            <strong>Hi, </strong>Your Calley Subscription is due to expire on <span id="txtExipryDate">11 Jul 2026</span>.
+        </div>
+        
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- LOGO -->
+                    <div class="topbar-left">
+                        <a href="dashboard.aspx" class="logo">
+                            
+                            <img src="images/mobile-logo.png">
+                        </a>
+                    </div>
+
+                    
+                    <div class="navbar-custom">
+                        <div>
+                            <div id="navigation">
+
+                                <!-- Navigation Menu-->
+                                <ul id="nav" class="navigation-menu">
+
+                                    
+                                    
+
+                                    <li>
+                                        
+                                        <a href="dashboard.aspx?utm_source=TopBar&amp;utm_medium=Web-Panel&amp;utm_campaign=PROT&amp;utm_id=PROT"><i class="zmdi zmdi-view-dashboard"></i><span>Dashboard</span></a>
+
+                                        
+                                     
+
+                                    </li>
+
+                                    <li>
+                                        
+                                        
+                                        <a href="call-list-teams.aspx">
+                                            <i class="fa fa-phone"></i><span>Call List <i class="fa fa-caret-down"></i></span>
+                                        </a>
+
+                                        
+                                        <ul>
+                                            
+
+                                            
+                                            
+                                            <li><a href="BulkUploadCsv.aspx"><span>Add - Power Import</span></a></li>
+                                            <li><a href="googlesheetdata.aspx?isAuth=0"><span>Add - Google Sheet Import</span></a></li>
+                                            
+
+                                            
+                                            <li><a href="CallReport.aspx"><span>Manage Existing Lists</span></a></li>
+                                            
+                                            <li><a href="scheduledcalls.aspx"><span>Scheduled Calls</span></a></li>
+
+                                            
+                                            <li><a href="scheduledcallscancel.aspx"><span>Cancelled Calls</span></a></li>
+                                            <li><a href="Incomming_call.aspx"><span>Incoming Calls</span></a></li>
+                                            <li><a href="Missed_call.aspx"><span>Missed Calls</span></a></li>
+
+
+                                            
+
+                                            <li><a href="dndcalllist.aspx"><span>DND</span></a></li>
+                                            
+                                            
+                                        </ul>
+                                    </li>
+                                    
+
+                                    
+                                    <li><a href="disposition-teams.aspx"><i class="zmdi zmdi-comment"></i><span>Feedbacks <i class="fa fa-caret-down"></i></span></a>
+                                        <ul>
+                                            <li><a href="feedbacktemplate.aspx">Manage Feedbacks</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-comment"></i><span>Messages <i class="fa fa-caret-down"></i></span></a>
+                                        <ul>
+                                            <li>
+                                                
+                                                
+                                                <a href="message-teams.aspx">SMS / Whatsapp &gt;&gt;</a>
+                                                
+                                                <ul>
+                                                    
+                                                    
+                                                    <li><a href="MessageAPI_Integration.aspx"><span>Message API Integration</span></a></li>
+                                                    
+                                                    <li><a href="smstemplate.aspx"><span>Message Templates</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                
+                                                
+                                                <a href="email-teams.aspx">Email &gt;&gt;</a>
+                                                
+                                                <ul>
+                                                    
+                                                    <li><a href="Mailmaster.aspx"><span>Profile Setup</span></a></li>
+                                                    
+                                                    <li><a href="mailTemplates.aspx"><span>Email Templates</span></a></li>
+                                                    <li><a href="OutlookCallback.aspx"><span>Outlook Setup</span></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    
+                                    <li>
+                                        
+                                        
+                                        <a href="teams.aspx" class="team_top">
+                                            <i class="zmdi zmdi-accounts-alt" style="font-size: 22px;"></i><span>Team</span>
+                                        </a>
+                                        
+                                        <ul>
+                                            
+                                            <li><a href="TeamLeads.aspx"><span>Team Lead</span></a></li>
+                                            
+                                            <li><a href="agents.aspx"><span>Agents</span></a></li>
+                                            <li style="display: none;"><a href="buymoreagents.aspx"><span>Buy More Agents</span></a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        
+                                        <a href="reports-teams.aspx">
+                                            <i class="zmdi zmdi-widgets"></i><span>Reports</span>
+                                        </a>
+                                        
+                                        <ul>
+                                            
+                                            
+                                            
+                                            <li><a href="CallSummaryReport2days.aspx"><span>Call Summary</span></a></li>
+                                            
+                                            <li><a href="CallsReport.aspx"><span>Call Details</span></a></li>
+                                            <li><a href="AllCallsReport.aspx"><span>Raw Call Data</span></a></li>
+                                            <li><a href="CallfromBrowserUserReport.aspx"><span>Call From Browser Report</span></a></li>
+                                            
+
+                                            
+                                            <li><a href="gamification_Teams.aspx"><span>Gamification</span></a></li>
+                                            
+                                            <li><a href="feedbackwisecallReport.aspx"><span>Feedback Wise Call Report</span></a></li>
+                                            
+                                            <li><a href="agent-dashboard.aspx"><span>Agents Performance Report</span></a></li>
+                                            <li><a href="PivotReport.aspx"><span>Agent Pivot Graph Report</span></a></li>
+                                            
+                                            
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="integration_center.aspx"><i class="fa fa-cog"></i><span>Integration</span></a></li>
+                                    
+                                    <li><a href="getting-started.aspx" class="quick_set"><i class="zmdi zmdi-view-dashboard"></i><span>Quick Setup</span></a></li>
+                                    
+
+                                    
+
+
+                                    <li class="mobile-menu"><a href="profile.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-account-circle"></i><span>Profile</span></a></li>
+                                    
+
+                                    <li class="mobile-menu">
+                                          <a href="#" class="dropdown-item notify-item upnow"><span class="UpGraDeNow"><span>Cancel Subscription</span></span></a>  
+                                    </li>
+                                    
+                                    <li class="mobile-menu"><a href="BuyMoreAgentOrderReport.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-file-text"></i><span>Agent Order Report</span></a></li>
+                                    <li class="mobile-menu"><a href="DowngradeTeamAgentsReport.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-file-text"></i><span>Downgrade Agent Report</span></a></li>
+                                    
+
+                                    <li class="mobile-menu"><a href="ChangePassword.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-lock-open"></i><span>Change Password</span></a></li>
+                                    <li class="mobile-menu last-elements"><a href="logout.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-power"></i><span>Logout</span></a></li>
+
+                                    <span id="Label3" style="display: none;"></span>
+
+                                </ul>
+
+
+                                <!-- End navigation menu  -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="topbar-leftMobile">
+                        <a href="dashboard.aspx" class="logo">
+                            <img src="images/mobile-logo.png"></a>
+                    </div>
+                    <!-- End Logo container-->
+                    <div class="mobileToggleNav">
+
+
+                        <span style="font-size: 30px; cursor: pointer" onclick="openNav()">☰</span>
+
+                    </div>
+
+                    <div id="mySidenav" class="sidebar-wrapper sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                        
+
+                        <ul class="first_sidenav">
+                            <li class="list-inline-item name-header"><span class="spusername">Hi Rahul</span> <br> <span class="spuseremail">rahul656676@gmail.com</span></li>
+                            <li class="active"><a href="dashboard_teams.aspx?utm_source=TopBar&amp;utm_medium=Web-Panel&amp;utm_campaign=PROT&amp;utm_id=PROT" class=""><i class="zmdi zmdi-view-dashboard"></i><span>Dashboard</span></a></li>
+                            <li class=""><a href="teams.aspx" class=""><i class="fa fa-users"></i><span>Teams</span></a></li>
+                            <li class=""><a href="disposition-teams.aspx" class="dash_feedback"><i class="fa fa-bolt"></i><span>Feedbacks</span></a></li>
+                            <li class=""><a href="call-list-teams.aspx" class=""><i class="fa fa-phone"></i><span>Call List</span></a></li>
+                            <li class=""><a href="message-teams.aspx" class=""><i class="zmdi zmdi-whatsapp"></i><span>SMS/Whatsapp</span></a></li>
+                            <li class=""><a href="email-teams.aspx" class=""><i class="zmdi zmdi-email"></i><span>Emails</span></a></li>
+                            <li class=""><a href="reports-teams.aspx" class=""><i class="zmdi zmdi-widgets"></i><span>Reporting</span></a></li>
+                            <li class=""><a href="integration_center.aspx" class=""><i class="fa fa-cog"></i><span>Integration</span></a></li>
+                            <hr style="border-top: 1px dashed #666;">
+                            <li class=""><a href="getting-started.aspx" class="quick_set"><i class="zmdi zmdi-view-dashboard"></i><span>Quick Setup</span></a></li>
+                            <hr style="border-top: 1px dashed #666;">
+                            <li class="mobile-menu"><a href="profile.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-account-circle"></i><span>Profile</span></a></li>
+                            <li class="mobile-menu"><a href="subscription_list.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-card-membership"></i><span>Subscriptions</span></a></li>
+                            <li class="mobile-menu"><a href="BuyMoreAgentOrderReport.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-file-text"></i><span>Agent Order Report</span></a></li>
+                            <li class="mobile-menu"><a href="DowngradeTeamAgentsReport.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-file-text"></i><span>Downgrade Agent Report</span></a></li>
+                            <li class="mobile-menu"><a href="ChangePassword.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-lock-open"></i><span>Change Password</span></a></li>
+                            <li class="mobile-menu"><a href="logout.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-power"></i><span>Logout</span></a></li>
+                            
+                                <li class="pro-upgrade" id="divmobteamuser" style="float: right;">
+                                    
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+
+                                                <b>
+                                                    <span id="lblplannamemobile2">Calley for Teams</span></b><br>
+
+                                                <span id="lblplandatemobile2">[Validity <b>11/07/2026</b>]</span>
+
+                                                
+
+                                                <a href="CancelSubscription.aspx" class="dropdown-item notify-item upnow"><span>Cancel Subscription</span></a>
+
+                                                
+                                            </div>
+                                        </li>
+
+                                        
+                                        <li id="donwload_header" class="list-inline-item">
+                                            <div id="donwload_app">
+                                                <p>Download Calley App</p>
+                                                <span>
+                                                    <a href="http://bit.ly/2XPUgQe" target="_blank">
+                                                        <i class="fa fa-android" aria-hidden="true" style="font-size: 24px"></i></a>
+                                                    <a href="https://apple.co/30LP2lk" target="_blank">
+                                                        <i class="fa fa-apple" style="font-size: 24px"></i></a>
+                                                </span>
+                                            </div>
+                                        </li>
+                        </ul>
+                        
+                    </div>
+
+                    <div id="myOverlay" class="overlay">
+                        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">X</span>
+                        <div class="overlay-content">
+                            
+                            <p class="text-center" style="color: #fff">
+                                Search by<br>
+                                Name or Number
+                            </p>
+                            <input name="ctl00$search" type="text" id="search" class="form-control" onkeypress="javascript: return BtnSearch(event);" placeholder="Search" aria-label="Search">
+                            <a href="javascript:void(0);" onclick="BtnSearchnew();">Submit</a>
+                            <p class="text-center MobileHideesc" style="color: #fff">Press escape to  cancel</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="menu-extras navbar-topbar">
+
+
+                        <ul class="list-inline float-right mb-0">
+
+
+                            <li class="list-inline-item">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+
+                            <span id="spnIcons">
+                                <li id="donwload_header" class="list-inline-item Mobilehide">
+                                    <div id="donwload_app" class="Deshtopicos">
+
+                                        <a href="http://bit.ly/2XPUgQe" target="_blank">
+                                            <i class="fa fa-android" aria-hidden="true" style=""></i></a>
+                                        <a href="https://apple.co/30LP2lk" target="_blank">
+                                            <i class="fa fa-apple" style=""></i></a>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item" id="MobileSearch">
+                                    
+                                    
+                                    <a class="openBtn" id="QuestionMark" target="_blank" href="https://help.getcalley.com/portal/en/kb/support/"><i class="fa fa-life-ring" title="Help"></i></a>
+
+
+                                    <a class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></a>
+                                    
+                                    
+
+                                    <div class="dropdown dropdown-b">
+                                        <a href="" class="header-notification" data-toggle="dropdown">
+                                            <i class="fa fa-bell"></i>
+                                            <span></span>
+                                        </a>
+
+                                        <div class="dropdown-menu notification_topmenu">
+                                            <div class="dropdown-menu-header">
+                                                <h6 class="dropdown-menu-title">Notifications</h6>
+                                                
+                                            </div>
+                                            <!-- dropdown-menu-header -->
+                                            <div class="dropdown-list">
+                                                <!-- loop starts here -->
+                                                
+                                                <!-- loop ends here -->
+                                                
+
+                                                <div class="dropdown-list-footer">
+                                                    <a href="Show_Notification.aspx"><i class="fa fa-angle-down"></i>Show All Notifications</a>
+                                                </div>
+                                            </div>
+                                            <!-- dropdown-list -->
+                                        </div>
+                                        <!-- dropdown-menu-right -->
+                                    </div>
+                                    <!-- dropdown -->
+
+
+
+                                    
+                                </li>
+                            </span>
+
+
+                            
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    
+                                    
+                                    <i class="fa fa-user-circle"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown desktop_profilesetup" aria-labelledby="Preview">
+                                    <div class="dropdown-item noti-title">
+                                        <h5 class="text-overflow"><small><span id="showUName"></span>
+                                            <span id="lblShowUserName">Rahul</span></small> </h5>
+                                    </div>
+                                    <div id="div_plan_name">
+
+                                        <a href="#" class="dropdown-item notify-item validity_opt"><b>
+                                            <span>
+                                                <span id="lbl_plan_name">Calley for Teams</span></span></b><br>
+                                            <span>
+                                                <span id="lbl_date">[Validity <b>11/07/2026</b>]</span></span></a>
+                                    </div>
+
+                                    
+                                    <a href="CancelSubscription.aspx" class="dropdown-item notify-item up_btn btn_logina"><span>Cancel Subscription</span></a>
+
+                                    
+                                    <a href="profile.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-account-circle"></i><span>Profile</span></a>
+                                    
+                                    <a href="subscription_list.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-card-membership"></i><span>Subscriptions</span></a>
+                                    
+                                    <a href="BuyMoreAgentOrderReport.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-file-text"></i><span>Agent Order Report</span></a>
+                                    <a href="DowngradeTeamAgentsReport.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-file-text"></i><span>Downgrade Agent Report</span></a>
+
+                                    <a href="ChangePassword.aspx" id="lnkChangePwd" class="dropdown-item notify-item"><i class="zmdi zmdi-lock-open"></i><span>Change Password</span></a>
+                                    <a href="logout.aspx" class="dropdown-item notify-item"><i class="zmdi zmdi-power"></i><span>Logout</span></a>
+                                </div>
+                            </li>
+                            <li class="list-inline-item name-header Mobilehide"></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+
+
+
+        </header>
+        <!-- <div id="showUserName" style="text-align: right;">
+            Welcome
+          
+            <input type="submit" name="ctl00$btnLogout" value="Log Out" id="btnLogout" style="color:White;background-color:#6699FF;height:30px;width:99px;" />
+        </div>-->
+        <input type="hidden" value="1" id="hdntogglevalue">
+        <input type="hidden" value="0" id="hdntogglevalueSetup">
+        <div class="wrapper">
+            <div class="container">
+
+                
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$hd_distributionType" id="ContentPlaceHolder1_hd_distributionType">
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$hd_agents" id="ContentPlaceHolder1_hd_agents">
+    <div class="row top_btntext">
+            <div class="col-xl-12 col-md-12 col-12">
+                 
+            </div>
+        </div>
+
+    <div class="row">
+        <!-- end col-->
+        <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12">
+          
+                   
+
+             <div class="row" id="Progressbar" style="display:none;">
+                                <div class="col-md-12" style="margin-right: 0px;">
+                                     <img src="Images/processing.gif" width="50" height="50">
+                                </div>
+                            </div>
+          
+         
+</div>
+    </div>
+       <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnfeedbackstatus" id="ContentPlaceHolder1_hdnfeedbackstatus" value="0">
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$hid_plan_info" id="ContentPlaceHolder1_hid_plan_info">
+        <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnPlanname" id="ContentPlaceHolder1_hdnPlanname">
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        function validate()
+        {
+            var jq = jQuery.noConflict();
+
+            var Selectedvalues = [];
+
+            $("select option:selected").each(function () {
+                if (this.value != '0')
+                    Selectedvalues.push(this.value);
+            });
+
+            if (!Selectedvalues.includes('FirstName'))
+            {
+                swal("Please select firstname");
+                return false;
+            }
+
+            if (!Selectedvalues.includes('Phone')) {
+                swal("Please select phone");
+                return false;
+            }
+
+            if (!Selectedvalues.includes('Notes')) {
+                swal("Please select notes");
+                return false;
+            }
+
+            $("select option:selected").each(function () {
+                this.disabled = false;
+            });
+
+            jq("#ContentPlaceHolder1_btnUpload").hide();
+            jq("#Progressbar").show();
+         }
+    </script>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $("select").change(function (e) {
+                    var id = $(this).attr("id");
+                    var value = this.value;
+                    var Selectedvalues = [];
+
+                    $("select option:selected").each(function () {
+                        if (this.value != '0')
+                            Selectedvalues.push(this.value);
+                    });
+
+                    $("select option").each(function () {
+
+                        this.disabled = false;
+
+                        if (Selectedvalues.includes(this.value)) {
+                            this.disabled = true;
+                        }
+                    });
+                });
+            });
+        </script>
+    <style>
+        .btn-new1, #Progressbar{
+            float: right;
+        }
+        @media (max-width: 767px){
+            .Left_SecTion{
+                margin-bottom: 5px;
+            }
+            .Right_Select{
+                width: 100%;
+            }
+            #columnbelong{
+                margin-bottom: 30px;
+            }
+            .btn-new1{
+                margin-top: 10px;
+            }
+        #Progressbar{float: right;width: 100%;}
+        #Progressbar .col-md-12{margin-right: 0px;margin-top: -100px;text-align: center;}
+        #Progressbar .col-md-12 img{width:100px;height:100px;}
+        .btn-new1{width:100%;margin-bottom: 35px !important;text-align:center;}
+        }
+    </style>
+
+            </div>
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+swal({ title: '',text: 'Data Uploaded Successfully!\n\n Your data has been uploaded successfully.\n Duplicate numbers will be removed automatically.\n\n If your upload contains more than 10,000 records, the data will be distributed into smaller lists of 10,000 records each in the backend. You can continue working on your panel during this process.\n\n A confirmation email will be sent once distribution is complete (only for uploads with more than 10,000 records).',type: 'success',confirmButtonText: 'OK',closeOnConfirm: true},function (isConfirm) { window.location.href = '/CallReport.aspx';});//]]>
+</script>
+</form><div class="sweet-overlay" tabindex="-1" style="opacity: 1.39; display: block;"></div><div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -350px;"><div class="sa-icon sa-error" style="display: none;">
+      <span class="sa-x-mark">
+        <span class="sa-line sa-left"></span>
+        <span class="sa-line sa-right"></span>
+      </span>
+    </div><div class="sa-icon sa-warning" style="display: none;">
+      <span class="sa-body"></span>
+      <span class="sa-dot"></span>
+    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success animate" style="display: block;">
+      <span class="sa-line sa-tip animateSuccessTip"></span>
+      <span class="sa-line sa-long animateSuccessLong"></span>
+
+      <div class="sa-placeholder"></div>
+      <div class="sa-fix"></div>
+    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2></h2>
+    <p style="display: block;">Data Uploaded Successfully!<br><br> Your data has been uploaded successfully.<br> Duplicate numbers will be removed automatically.<br><br> If your upload contains more than 10,000 records, the data will be distributed into smaller lists of 10,000 records each in the backend. You can continue working on your panel during this process.<br><br> A confirmation email will be sent once distribution is complete (only for uploads with more than 10,000 records).</p>
+    <fieldset>
+      <input type="text" tabindex="3" placeholder="">
+      <div class="sa-input-error"></div>
+    </fieldset><div class="sa-error-container">
+      <div class="icon">!</div>
+      <p>Not valid!</p>
+    </div><div class="sa-button-container">
+      <button class="cancel" tabindex="2" style="display: none;">Cancel</button>
+      <div class="sa-confirm-button-container">
+        <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(0, 168, 93); box-shadow: rgba(0, 168, 93, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">OK</button><div class="la-ball-fall">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div></div>
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","3861839740717018");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3861839740717018&amp;ev=PageView&amp;noscript=1"></noscript>
+
+
+    
+
+    
+    <div class="footer-tabs desk-view">
+        <div class="boxes whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=919971125588&amp;text=Hi!%20I%20am%20registered%20from%20Mobile%20Panel,%20Can%20you%20help%20me%20get%20started" target="_blank" title="Whatsapp Us">
+                <i class="fa fa-whatsapp"></i>
+                <div>Whatsapp</div>
+            </a>
+        </div>
+        <div class="boxes email">
+            <a href="mailto:support@getcalley.com" target="_blank" title="Write to Us">
+                <i class="fa fa-envelope"></i>
+                <div>Email</div>
+            </a>
+        </div>
+        <div class="boxes support">
+            <a href="https://help.getcalley.com/portal/en/kb/support/" target="_blank" title="Calley Support">
+                <i class="fa fa-life-ring"></i>
+                <div>Support</div>
+            </a>
+        </div>
+        <div class="boxes demo">
+            <a href="https://cstech.zohobookings.com/#/customer/cstech" target="_blank" title="Book a Demo">
+                <i class="fa fa-plus-square"></i>
+                <div>Book a Demo</div>
+            </a>
+        </div>
+        <div class="boxes chatbot">
+            <a href="https://salesiq.zohopublic.com/signaturesupport.ls?widgetcode=d0708c41ac824afcadb85f19a52a81a57d5e6e994ff79ed3f0e58225938ef1e36429293e87a6f71846a8752c6aa00af8" target="_blank" title="Chat Bot">
+                <img src="images/icon-chatbot.png">
+                <div>Chat</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <script type="text/javascript">(function (w, s) { var e = document.createElement("script"); e.type = "text/javascript"; e.async = true; e.src = "https://cdn.pagesense.io/js/cstech/d542d95a7c334e378654c9b3e7287424.js"; var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(e, x); })(window, "script");</script>
+        2026 © GetCalley.com <a href="https://www.notion.so/cstechmk/Calley-V35-Release-Notes-5cf14d7e5f5543afbe3308f41fe4914e?pvs=4" target="_blank">(Version - V36.00)</a>
+    </footer>
+    <!-- End Footer -->
+
+
+    <div class="modal fade" id="SubscriptionExpiredPopUp" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 120px !important;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="display: none;">
+                    <h5 class="modal-title">Subscription Expired</h5>
+                    
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="img" style="text-align: center; margin-bottom: 20px">
+                            <img src="images/error-file-upload.png" width="100">
+                        </div>
+                        <center>
+                            <h5 style="margin-bottom: 15px;">Hi! Rahul</h5>
+                            <h6>Your Calley Subscription has expired.</h6>
+                            <div style="margin: 15px 0;">You can pay the outstanding invoice by clicking on the link below.</div>
+                        </center>
+                    </div>
+                </div>
+                <div class="" style="text-align: center; display: block; margin-bottom: 20px;">
+                    <a href="upgrade.aspx" id="lnkUpgradeSubs" class="btn btn-new1" style="text-align: center;">Pay Invoice</a>
+                    <br>
+                    <a href="logout.aspx" id="A1" style="text-align: center; margin-top: 20px;">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+
+    <!-- jQuery  -->
+    
+    <script src="assets/js/jquery.min.js"></script>
+    
+
+    
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Tether for Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    
+    <script src="assets/js/waves.js"></script>
+
+    <script type="text/javascript">
+        function BtnSearch(evt) {
+            if (evt.keyCode == 13) {
+                window.location.href = "search.aspx?id=" + encodeURIComponent(document.getElementById('search').value.trim());
+                return false
+            }
+        }
+        function BtnSearchnew() {
+
+            window.location.href = "search.aspx?id=" + encodeURIComponent(document.getElementById('search').value.trim());
+            return false
+        }
+
+    </script>
+
+    <script src="assets/js/jquery.app.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".add_phone").click(function () {
+                $("#phone_add").toggle();
+            });
+
+          
+        });
+
+
+        function SetTogglevalueMaster() {
+            if ($("#hdntogglevalue").val() == "1") {
+                $("#hdntogglevalue").val(0);
+            }
+            else {
+                $("#hdntogglevalue").val(1);
+            }
+            if ($("#hdntogglevalue").val() == "0") {
+                $.ajax({
+                    url: 'dashboard.aspx/SetupStatus',
+                    data: "{status:'" + $("#hdntogglevalue").val() + "'}",
+                    type: 'POST',
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        if (data.d == "1") {
+                            window.location.href = '/getting-started.aspx';
+                            /*window.location.href = '/gettingstarted.aspx';*/
+                        }
+                        else {
+                            swal("something went wrong");
+                        }
+                    },
+                    error: function (data) {
+
+                    }
+                });
+            }
+
+        }
+        function SetTogglevalueMaster2() {
+            if ($("#hdntogglevalueSetup").val() == "1") {
+                $("#hdntogglevalueSetup").val(0);
+            }
+            else {
+                $("#hdntogglevalueSetup").val(1);
+            }
+            if ($("#hdntogglevalueSetup").val() == "1") {
+                $.ajax({
+                    url: 'dashboardsetup.aspx/SetupStatus',
+                    data: "{status:'" + $("#hdntogglevalueSetup").val() + "'}",
+                    type: 'POST',
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        if (data.d == "1") {
+
+                              
+
+                            window.location.href = '/dashboard.aspx?utm_source=TopBar&utm_medium=Web-Panel&utm_campaign=PROT&utm_id=PROT';
+                    
+                        }
+                        else {
+                            swal("something went wrong");
+                        }
+                    },
+                    error: function (data) {
+
+                    }
+                });
+            }
+
+        }
+
+        
+    </script>
+    
+<script type="text/javascript" src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js" id="aisensy-wa-widget" widget-id="aaatfx">
+</script>
+
+
+<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
+
+
+    
+
+
+
+<script src="https://d3mkw6s8thqya7.cloudfront.net/widget-plugin.js" type="text/javascript" async="" id="df-script"></script><style id="df-style">
+		.df-btn {
+			padding: 0 !important;
+			border: none !important;
+			outline: none !important;
+			font-family: 'Roboto','Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			border-radius: 24px !important;
+			transition: all 2s linear !important;
+			position: fixed !important;
+			bottom: 30px !important;
+			left:30px !important;
+			display: flex !important;
+			flex-direction: column !important;
+			z-index: 10005 !important;
+			align-items: flex-start !important;
+			line-height: 1 !important;
+		}
+		.df-btn * {
+			font-family: 'Roboto','Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+		}
+		.df-btn-text {
+			border-radius: 24px !important;
+			color: white !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: "center" !important;
+			font-weight: 500 !important;
+			letter-spacing: .25px !important;
+			transition: all .08s linear !important;
+			cursor: pointer !important;
+			padding-right: 15px !important;
+			padding-left: 10px !important;
+			padding-top: 5px !important;
+			padding-bottom: 5px !important;
+			font-size: 16px !important;
+			margin-top: 15px !important;
+			background-color: #4dc247;
+			box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px !important;
+		}
+		.df-btn-text-icon-only {
+			padding-left: 5px !important;
+			padding-right: 5px !important;
+		}
+		.df-svg-icon {
+			height: 40px !important;
+			width: 40px !important;
+			fill: white !important;
+		}
+		.df-cancel-svg-icon {
+			height: 12px !important;
+			width: 12px !important;
+			fill: lightgrey !important;
+			cursor: pointer !important;
+			margin-right: 8px !important;
+			margin-bottom: 15px !important;
+		}
+		.df-btn-text:hover {
+				box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149) !important;
+		}
+		.df-btn:hover {
+				outline: none !important;
+		}
+		.df-btn:focus {
+			outline: none !important;
+		}
+		.df-btn:not(.df-closed){
+			border-radius: 16px !important;
+		}
+		.df-btn:not(.df-closed) > .df-btn-text:before {
+			background-image: url('assets/close.svg') !important;
+		}
+		.df-btn a {
+			text-decoration: none !important ;
+			color: #0A5F54 !important;
+		}
+		.df-btn a:hover {
+			text-decoration: none !important;
+		}
+		.df-btn-content {
+			display: block !important;
+			border: 0 !important;
+			width: 350px !important;
+			transition: all .25s ease !important;
+			float: right !important;
+			opacity: 1 !important;
+			marginBottom: 25px !important;
+			border-radius: 12px !important;
+			position: relative !important;
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+			box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px !important;
+			
+		background-color: #e5ddd5;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23a9a9a9' fill-opacity='0.4'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); 
+		}
+		.df-content-topbar {
+			position: sticky !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			background: #0A5F54;
+			min-height: 50px !important;
+			border-radius: 12px 12px 0px 0px !important;
+			box-sizing: border-box !important;
+			padding: 20px 15px !important;
+			display: flex !important;
+			align-items: center !important;
+		}
+		.df-content-topbar .df-brand-img {
+			height: 40px !important;
+			width: 40px !important;
+			border-radius: 50% !important;
+			box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px !important;
+			margin-right: 8px !important;
+		}
+		.df-content-topbar .df-brand-name {
+			font-size: 16px !important;
+			font-weight: 500 !important;
+			color: white !important;
+			line-height: 1 !important;
+			margin-bottom: 5px !important;
+		}
+		.df-content-topbar .df-brand-sub {
+			color: white !important;
+			font-size: 12px !important;
+		}
+		.df-content-bottombar {
+			position: sticky !important;
+			bottom: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			background: white !important;
+			min-height: 70px !important;
+			border-radius: 0px 0px 12px 12px !important;
+			box-sizing: border-box !important;
+			padding: 20px 25px 10px 25px !important;
+		}
+		.df-bottombar-btn {
+			width: 100% !important;
+			padding: 10px 0px !important;
+			border-radius: 50px !important;
+			background-color: #4dc247;
+			display: flex !important;
+			justify-content: center !important;
+			align-items: center !important;
+			color: white !important;
+			cursor: pointer !important;
+		}
+		.df-bottombar-branding {
+			font-size: 12px !important;
+			color: grey !important;
+			text-align: center !important;
+			margin-top: 8px !important;
+		}
+		.df-bottombar-branding a {
+			color: #08cf65 !important;
+		}
+		.df-content-window {
+			width: 100% !important;
+			min-height: 140px !important;
+			overflow-x: hidden !important;
+			overflow-y: auto !important;
+		}
+		.df-window-msg-cont {
+			width: 75% !important;
+			margin: 15px !important;
+			background: white !important;
+			display: inline-block !important;
+			padding: 10px 15px !important;
+			border-radius: 0px 8px 8px 8px !important;
+			font-size: 14px !important;
+			position: relative !important;
+		}
+		.df-window-msg-cont:before {
+			content:'' !important;
+			position: absolute !important;
+			top: 0px !important;
+			left: 0px !important;
+			margin-left: -8px !important;
+			width: 0 !important;
+			height: 0 !important;
+			border-bottom: solid 10px transparent !important;
+			border-right: solid 8px white !important;
+		}
+		.df-window-msg-cont-brandname {
+			color: #848484 !important;
+			font-weight: 500 !important;
+		}
+		.df-onscreen-img {
+			width: 100% !important;
+			border-radius: 8px !important;
+			min-height: 230px !important;
+			max-height: 250px !important;
+			background-image: url('https://2es93q3aicyy3w1qrv1vk3o2-wpengine.netdna-ssl.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-04-at-14.19.02-8.jpeg') !important;
+			background-size: cover !important;
+			margin: 8px 0px !important; 
+		}
+		.df-window-msg {
+			color: black !important;
+			margin-top: 6px !important;
+			white-space: pre-wrap !important;
+			min-width: 160px !important;
+			max-width: 250px !important;
+			font-family: Roboto !important;
+			margin-bottom: 0px !important;
+			word-break: break-word !important;
+			line-height: 1.4 !important;
+			border: none !important;
+			padding: 0 !important;
+			background: none !important;
+		}
+		.df-emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+		.df-btn:not(.df-closed) > .df-btn-content {
+		}
+		.df-closed > .df-btn-content {
+			width: 0 !important;
+			height: 0 !important;
+			opacity: 0 !important;
+		}
+		@media screen and (max-width: 720px){
+			.df-btn-content {
+				height: 300px !important;
+				width: 300px !important;
+			}
+			.df-content-topbar {
+				min-height: 40px !important;
+				border-radius: 12px 12px 0px 0px !important;
+				box-sizing: border-box !important;
+				padding: 14px 15px !important;
+				display: flex !important;
+				align-items: center !important;
+			}
+			.df-content-topbar .df-brand-img {
+				height: 40px !important;
+				width: 40px !important;
+				margin-right: 5px !important;
+			}
+			.df-content-window {
+				width: 100% !important;
+				height: calc(100% - 70px - 90px) !important;
+				overflow-x: hidden !important;
+				overflow-y: auto !important;
+			}
+			.df-cancel-svg-icon {
+				margin-bottom: 5px !important;
+			}
+		}
+	</style><div id="df-btn-cont">
+		<div class="df-btn df-closed">
+			<div class="df-btn-content">
+				<div class="df-content-topbar">
+					<div class="df-brand-img">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ2lHBsSujb4TdG1dREfX1K_0ZmG2PaSG3IQ&amp;s" height="100%" width="100%" style="border-radius: 50%;" alt="img">
+					</div>
+					<div style="flex-grow: 1;">
+						<div class="df-brand-name">Calley</div>
+						<div class="df-brand-sub">online</div>
+					</div>
+					<div onclick="dfToggle()">
+						
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve" class="df-cancel-svg-icon">
+		<g>
+			<g>
+				<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872    c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872    c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052    L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116    c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952    c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116    c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"></path>
+			</g>
+		</g>
+	</svg>
+	
+					</div>
+				</div>
+				<div class="df-content-window">
+					<div class="df-window-msg-cont">
+						<div class="df-window-msg-cont-brandname">
+							Calley
+						</div>
+						
+						<pre class="df-window-msg">Hi, 
+I need help with the Calley Panel. I am on page - <a href="https://app.getcalley.com/BulkcopyColumnMap.aspx" target="_blank">https://app.getcalley.com/BulkcopyColumnMap.aspx</a></pre>
+					</div>
+				</div>
+				<div class="df-content-bottombar">
+					<div class="df-bottombar-btn" onclick="goToLink()">
+						Start chat
+					</div>
+					<div class="df-bottombar-branding">
+						<img draggable="false" role="img" class="df-emoji" alt="âš¡" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0ZGQUMzMyIgZD0iTTMyLjkzOCAxNS42NTFDMzIuNzkyIDE1LjI2IDMyLjQxOCAxNSAzMiAxNUgxOS45MjVMMjYuODkgMS40NThjLjIxOS0uNDI2LjEwNi0uOTQ3LS4yNzEtMS4yNDNDMjYuNDM3LjA3MSAyNi4yMTggMCAyNiAwYy0uMjMzIDAtLjQ2Ni4wODItLjY1My4yNDNMMTggNi41ODggMy4zNDcgMTkuMjQzYy0uMzE2LjI3My0uNDMuNzE0LS4yODQgMS4xMDVTMy41ODIgMjEgNCAyMWgxMi4wNzVMOS4xMSAzNC41NDJjLS4yMTkuNDI2LS4xMDYuOTQ3LjI3MSAxLjI0My4xODIuMTQ0LjQwMS4yMTUuNjE5LjIxNS4yMzMgMCAuNDY2LS4wODIuNjUzLS4yNDNMMTggMjkuNDEybDE0LjY1My0xMi42NTVjLjMxNy0uMjczLjQzLS43MTQuMjg1LTEuMTA2eiIvPjwvc3ZnPg==">
+						by 
+						<a href="https://aisensy.com" target="_blank"> <i>AiSensy</i> </a>
+					</div>
+				</div>
+			</div>
+			<div class="df-btn-text" onclick="dfToggle()">
+				<svg class="df-svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path></svg> Chat with us
+			</div>
+		</div>
+	</div></body></html>

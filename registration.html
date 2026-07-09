@@ -1,0 +1,842 @@
+
+
+<!DOCTYPE html>
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+
+<link href="css/sweetalert.css" rel="stylesheet" />
+
+<script src="Scripts/Sweetalert.js"></script>
+
+
+
+<!-- ico-font-->
+
+<!-- Themify icon-->
+
+<!-- Plugins css start-->
+<!-- Plugins css Ends-->
+<!-- Bootstrap css-->
+<link rel="stylesheet" type="text/css" href="assetsnew/css/vendors/themify.css" />
+<link rel="stylesheet" type="text/css" href="assetsnew/css/vendors/bootstrap.css" />
+<!-- App css-->
+<link rel="stylesheet" type="text/css" href="assetsnew/css/style.css?v5.5" />
+
+<link rel="stylesheet" type="text/css" href="assetsnew/custom.css?v6.5" />
+
+<style>
+    #login_mob {
+        display: none !important;
+    }
+
+    .wg-default {
+        display: none !important;
+    }
+
+    #form1 {
+        margin-bottom: 0px;
+    }
+</style>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+    jq(document).ready(function () {
+
+        getNewCode();
+        jq('#txt_mobile').keypress(function (event) {
+            return isNumber(event, this)
+        });
+    });
+
+    function getNewCode() {
+        jq.ajax({
+            type: "POST",
+            url: "CImage.aspx/GenerateRandomCode",
+            complete: function (data) {
+                var strcode = data.responseText;
+                jq("#hdnCode").val(strcode);
+                jq("#requestdemo1_lblCaptchaCode").text(strcode);
+            }
+        });
+    }
+
+
+
+
+
+</script>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+
+    function validation() {
+        var jq = jQuery.noConflict();
+        //var code = jq(".selected-flag").attr('title');
+        //jq("#hdncountrycode").val(code);
+        var code = iti.getSelectedCountryData().dialCode;
+        jq("#hdncountrycode").val(code);
+        //var countycode = jq(".selected-flag").children(0).attr('class')
+        //jq("#hdncountryname").val(countycode.split(' ')[1]);
+        var countyname = iti.getSelectedCountryData().name;
+        jq("#hdncountryname").val(countyname);
+
+        if (countyname == '' || countyname == null) {
+            countyname = jq('.iti__selected-flag').attr("title").split(':')[0].trim();
+            code = jq('.iti__selected-flag').attr("title").split(':')[1].trim().replace('+', '');
+            jq("#hdncountrycode").val(code);
+            jq("#hdncountryname").val(countyname);
+        }
+
+        //alert(a);
+        //return false;
+        var msg = "";
+        var reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        var namereg = /^\S((?!.*  ).*\S)?$/;
+        if (document.getElementById("txtName").value == "") {
+
+            msg = msg + "Enter Name. \n";
+            //swal(msg, "", "warning");
+            document.getElementById("txtName").focus();
+            //return false;
+        }
+        
+
+
+        if (document.getElementById("txtEmail").value == "") {
+            msg = msg + "Enter Email Id. \n";
+            //swal(msg, "", "warning");
+            document.getElementById("txtEmail").focus();
+            //return false;
+        }
+
+
+        var email = document.getElementById("txtEmail").value
+        if (email == "") {
+            msg = msg + " EmailID can not be left blank." + "\n";
+            //swal(msg, "", "warning");
+            document.getElementById("txtEmail").focus();
+            //return false;
+        }
+
+        if (email != "") {
+            if (reg.test(document.getElementById("txtEmail").value) == false && document.getElementById("txtEmail").value != '') {
+                msg = msg + " EmailID should be in proper format." + "\n";
+                //swal(msg, "", "warning");
+                document.getElementById("txtEmail").focus();
+                //return false;
+            }
+        }
+
+        if (email != "") {
+            if (document.getElementById("txtEmail").value.indexOf('@gamil') > -1 ||
+                document.getElementById("txtEmail").value.indexOf('@gmil') > -1 ||
+                document.getElementById("txtEmail").value.indexOf('@gmal') > -1 ||
+                document.getElementById("txtEmail").value.indexOf('.cm') > -1 ||
+                document.getElementById("txtEmail").value.indexOf('.cn') > -1 ||
+                document.getElementById("txtEmail").value.indexOf('.con') > -1) {
+                msg = msg + " EmailID should be in proper format." + "\n";
+                //swal(msg, "", "warning");
+                document.getElementById("txtEmail").focus();
+                //return false;
+            }
+        }
+
+       
+        var password = document.getElementById("txtPassword").value;
+
+        // Strong password regex
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^()_\-+=])[A-Za-z\d@$!%*?&#^()_\-+=]{8,}$/;
+
+        if (password == "") {
+            msg = msg + "Enter Password. \n";
+            document.getElementById("txtPassword").focus();
+        }
+        else if (!passwordRegex.test(password)) {
+            msg = msg + "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character. \n";
+            document.getElementById("txtPassword").focus();
+        }
+       
+
+        if (document.getElementById("txt_mobile").value == "") {
+            msg = msg + "Enter Mobile no. \n";
+            //swal(msg, "", "warning");
+            document.getElementById("txt_mobile").focus();
+            //return false;
+        }
+        if (document.getElementById("hdncountrycode").value == "Unknown" || document.getElementById("hdncountrycode").value.trim() == "") {
+            msg = msg + "Please Select valid country flag. \n";
+            //swal(msg, "", "warning");
+            document.getElementById("txt_mobile").focus();
+            //return false;
+        }
+        if (document.getElementById("hdncountryname").value == "" || document.getElementById("hdncountryname").value.trim() == "Not Selected") {
+            msg = msg + "Please Select valid country flag. \n";
+            //swal(msg, "", "warning");
+            document.getElementById("txt_mobile").focus();
+            //return false;
+        }
+
+        if (isPositiveInteger1(jq("#txt_mobile").val(), 'Only Digit Allowed in Contact No.') == false && jq("#txt_mobile").val() != '') {
+            msg = msg + "Only Digit Allowed in Mobile Number. \n";
+            //swal(msg, "", "warning");
+            document.getElementById("txt_mobile").focus();
+            //return false;
+        }
+        var mobile = jq("#txt_mobile").val();
+     
+
+        
+
+        //abhishek
+
+        if (grecaptcha.getResponse() == "") {
+            msg = msg + "Captcha verification required. \n";
+            //swal(msg, "", "warning");
+
+            //return false;
+        }
+
+
+       
+        if (jq("#hd_terms").val() == "" || jq("#hd_terms").val() == "No") {
+            msg = msg + "Please check Terms and Conditions. \n";
+            //swal(msg, "", "warning");
+            //return false;
+        }
+
+        if (msg != "") {
+            swal(msg, "", "warning");
+            return false;
+        }
+
+        return true;
+
+    }
+    function isPositiveInteger1(val, swalText) {
+        //swal(id1);
+        //var val=document.getElementById(id1).value;
+        //swal(val);
+        if (val == null || val == '') { return false; }
+        if (val.length == 0) { return false; }
+        for (var i = 0; i < val.length; i++) {
+            var ch = val.charAt(i)
+            if (ch < "0" || ch > "9") {
+                //swal(swalText);
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+<script>
+    function isNumber(evt, element) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (
+            (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+</script>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+    function getreturn() {
+
+        jq("#hd_terms").val();
+        if (jq('#checkbox-signup').is(":checked")) {
+            jq("#hd_terms").val("Yes");
+
+            Android.showToast("Yes");
+
+        } else {
+            Android.showToast("No");
+            jq("#hd_terms").val("No");
+        }
+    }
+
+    function getreturnregistretion(type) {
+
+        Android.showToast(type);
+    }
+
+    function showothers() {
+        var jq = jQuery.noConflict();
+        if (jq("#ddlIndustry").val() == "Others")
+            jq("#divOther").show()
+        else
+            jq("#divOther").hide()
+    }
+    function ProcessBtn() {
+        var jq = jQuery.noConflict();
+        jq("#btnSignUp").val("Process...");
+        jq("#lbtnRegister").val("Process...");
+    }
+</script>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KNK69N6');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" /><title>
+	Getcalley - Registration
+</title><link href="css/intlTelInputV2.css" rel="stylesheet" />
+    <script src="js/intlTelInput.min.js"></script>
+    <style>
+        
+    </style>
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <form method="post" action="./registration.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E6B69E9" />
+</div>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNK69N6"
+                height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 mainimg_bkg">
+                </div>
+
+                <div class="col-xl-7 p-0">
+                    <div class="login-card">
+                        <div>
+                            <a href="https://www.getcalley.com/" class="logo" target="_blank">
+                                <img src="assetsnew/logonew.png" />
+                            </a>
+                            <div class="login-main">
+                                <div class="theme-form" id="divRegistrationForm">
+                                    <h4>Create your account</h4>
+                                    <p>Enter your personal details to create account</p>
+
+                                    
+
+                                    <div class="form-group mb-3">
+                                        <input name="txtName" type="text" autocomplete="off" maxlength="30" id="txtName" onkeypress="return _isAlphabet();" class="form-control" placeholder="Your Name" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input name="txtEmail" type="email" autocomplete="off" maxlength="50" id="txtEmail" class="form-control" placeholder="Your Email Id" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="form-input position-relative">
+                                            <input name="txtPassword" type="password" autocomplete="off" maxlength="15" id="txtPassword" class="form-control" placeholder="Your Password" />
+                                            <div class="show-hide"><span class="show" id="togglepass"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3" style="display: none;">
+                                        <select name="ddlCountry" id="ddlCountry" class="form-control">
+	<option value="Not Selected">Please Select Country</option>
+	<option value="Afghanistan">Afghanistan  (AFG)</option>
+	<option value="Aland Islands">Aland Islands  (ALA)</option>
+	<option value="Albania">Albania  (ALB)</option>
+	<option value="Algeria">Algeria  (DZA)</option>
+	<option value="American Samoa">American Samoa  (ASM)</option>
+	<option value="Andorra">Andorra  (AND)</option>
+	<option value="Angola">Angola  (AGO)</option>
+	<option value="Anguilla">Anguilla  (AIA)</option>
+	<option value="Antarctica">Antarctica  (ATA)</option>
+	<option value="Antigua and Barbuda">Antigua and Barbuda  (ATG)</option>
+	<option value="Argentina">Argentina  (ARG)</option>
+	<option value="Armenia">Armenia  (ARM)</option>
+	<option value="Aruba">Aruba  (ABW)</option>
+	<option value="Australia">Australia  (AUS)</option>
+	<option value="Austria">Austria  (AUT)</option>
+	<option value="Azerbaijan">Azerbaijan  (AZE)</option>
+	<option value="Bahamas">Bahamas  (BHS)</option>
+	<option value="Bahrain">Bahrain  (BHR)</option>
+	<option value="Bangladesh">Bangladesh  (BGD)</option>
+	<option value="Barbados">Barbados  (BRB)</option>
+	<option value="Belarus">Belarus  (BLR)</option>
+	<option value="Belgium">Belgium  (BEL)</option>
+	<option value="Belize">Belize  (BLZ)</option>
+	<option value="Benin">Benin  (BEN)</option>
+	<option value="Bermuda">Bermuda  (BMU)</option>
+	<option value="Bhutan">Bhutan  (BTN)</option>
+	<option value="Bolivia (Plurinational State of)">Bolivia (Plurinational State of)  (BOL)</option>
+	<option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba  (BES)</option>
+	<option value="Bosnia and Herzegovina">Bosnia and Herzegovina  (BIH)</option>
+	<option value="Botswana">Botswana  (BWA)</option>
+	<option value="Bouvet Island">Bouvet Island  (BVT)</option>
+	<option value="Brazil">Brazil  (BRA)</option>
+	<option value="British Indian Ocean Territory">British Indian Ocean Territory  (IOT)</option>
+	<option value="Brunei Darussalam">Brunei Darussalam  (BRN)</option>
+	<option value="Bulgaria">Bulgaria  (BGR)</option>
+	<option value="Burkina Faso">Burkina Faso  (BFA)</option>
+	<option value="Burundi">Burundi  (BDI)</option>
+	<option value="Cabo Verde">Cabo Verde  (CPV)</option>
+	<option value="Cambodia">Cambodia  (KHM)</option>
+	<option value="Cameroon">Cameroon  (CMR)</option>
+	<option value="Canada">Canada  (CAN)</option>
+	<option value="Cayman Islands">Cayman Islands  (CYM)</option>
+	<option value="Central African Republic">Central African Republic  (CAF)</option>
+	<option value="Chad">Chad  (TCD)</option>
+	<option value="Chile">Chile  (CHL)</option>
+	<option value="China">China  (CHN)</option>
+	<option value="Christmas Island">Christmas Island  (CXR)</option>
+	<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands  (CCK)</option>
+	<option value="Colombia">Colombia  (COL)</option>
+	<option value="Comoros">Comoros  (COM)</option>
+	<option value="Congo">Congo  (COG)</option>
+	<option value="Congo (the Democratic Republic of the)">Congo (the Democratic Republic of the)  (COD)</option>
+	<option value="Cook Islands">Cook Islands  (COK)</option>
+	<option value="Costa Rica">Costa Rica  (CRI)</option>
+	<option value="Cote d&#39;Ivoire">Cote d&#39;Ivoire  (CIV)</option>
+	<option value="Croatia">Croatia  (HRV)</option>
+	<option value="Cuba">Cuba  (CUB)</option>
+	<option value="Curacao">Curacao  (CUW)</option>
+	<option value="Cyprus">Cyprus  (CYP)</option>
+	<option value="Czech Republic">Czech Republic  (CZE)</option>
+	<option value="Denmark">Denmark  (DNK)</option>
+	<option value="Djibouti">Djibouti  (DJI)</option>
+	<option value="Dominica">Dominica  (DMA)</option>
+	<option value="Dominican Republic">Dominican Republic  (DOM)</option>
+	<option value="Ecuador">Ecuador  (ECU)</option>
+	<option value="Egypt">Egypt  (EGY)</option>
+	<option value="El Salvador">El Salvador  (SLV)</option>
+	<option value="Equatorial Guinea">Equatorial Guinea  (GNQ)</option>
+	<option value="Eritrea">Eritrea  (ERI)</option>
+	<option value="Estonia">Estonia  (EST)</option>
+	<option value="Ethiopia">Ethiopia  (ETH)</option>
+	<option value="Falkland Islands [Malvinas]">Falkland Islands [Malvinas]  (FLK)</option>
+	<option value="Faroe Islands">Faroe Islands  (FRO)</option>
+	<option value="Fiji">Fiji  (FJI)</option>
+	<option value="Finland">Finland  (FIN)</option>
+	<option value="France">France  (FRA)</option>
+	<option value="French Guiana">French Guiana  (GUF)</option>
+	<option value="French Polynesia">French Polynesia  (PYF)</option>
+	<option value="French Southern Territories">French Southern Territories  (ATF)</option>
+	<option value="Gabon">Gabon  (GAB)</option>
+	<option value="Gambia">Gambia  (GMB)</option>
+	<option value="Georgia">Georgia  (GEO)</option>
+	<option value="Germany">Germany  (DEU)</option>
+	<option value="Ghana">Ghana  (GHA)</option>
+	<option value="Gibraltar">Gibraltar  (GIB)</option>
+	<option value="Greece">Greece  (GRC)</option>
+	<option value="Greenland">Greenland  (GRL)</option>
+	<option value="Grenada">Grenada  (GRD)</option>
+	<option value="Guadeloupe">Guadeloupe  (GLP)</option>
+	<option value="Guam">Guam  (GUM)</option>
+	<option value="Guatemala">Guatemala  (GTM)</option>
+	<option value="Guernsey">Guernsey  (GGY)</option>
+	<option value="Guinea">Guinea  (GIN)</option>
+	<option value="Guinea-Bissau">Guinea-Bissau  (GNB)</option>
+	<option value="Guyana">Guyana  (GUY)</option>
+	<option value="Haiti">Haiti  (HTI)</option>
+	<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands  (HMD)</option>
+	<option value="Holy See">Holy See  (VAT)</option>
+	<option value="Honduras">Honduras  (HND)</option>
+	<option value="Hong Kong">Hong Kong  (HKG)</option>
+	<option value="Hungary">Hungary  (HUN)</option>
+	<option value="Iceland">Iceland  (ISL)</option>
+	<option selected="selected" value="India">India  (IND)</option>
+	<option value="Indonesia">Indonesia  (IDN)</option>
+	<option value="Iran (Islamic Republic of)">Iran (Islamic Republic of)  (IRN)</option>
+	<option value="Iraq">Iraq  (IRQ)</option>
+	<option value="Ireland">Ireland  (IRL)</option>
+	<option value="Isle of Man">Isle of Man  (IMN)</option>
+	<option value="Israel">Israel  (ISR)</option>
+	<option value="Italy">Italy  (ITA)</option>
+	<option value="Jamaica">Jamaica  (JAM)</option>
+	<option value="Japan">Japan  (JPN)</option>
+	<option value="Jersey">Jersey  (JEY)</option>
+	<option value="Jordan">Jordan  (JOR)</option>
+	<option value="Kazakhstan">Kazakhstan  (KAZ)</option>
+	<option value="Kenya">Kenya  (KEN)</option>
+	<option value="Kiribati">Kiribati  (KIR)</option>
+	<option value="Korea (the Democratic People&#39;s Republic of)">Korea (the Democratic People&#39;s Republic of)  (PRK)</option>
+	<option value="Korea (the Republic of)">Korea (the Republic of)  (KOR)</option>
+	<option value="Kuwait">Kuwait  (KWT)</option>
+	<option value="Kyrgyzstan">Kyrgyzstan  (KGZ)</option>
+	<option value="Lao People&#39;s Democratic Republic">Lao People&#39;s Democratic Republic  (LAO)</option>
+	<option value="Latvia">Latvia  (LVA)</option>
+	<option value="Lebanon">Lebanon  (LBN)</option>
+	<option value="Lesotho">Lesotho  (LSO)</option>
+	<option value="Liberia">Liberia  (LBR)</option>
+	<option value="Libya">Libya  (LBY)</option>
+	<option value="Liechtenstein">Liechtenstein  (LIE)</option>
+	<option value="Lithuania">Lithuania  (LTU)</option>
+	<option value="Luxembourg">Luxembourg  (LUX)</option>
+	<option value="Macao">Macao  (MAC)</option>
+	<option value="Macedonia (the former Yugoslav Republic of)">Macedonia (the former Yugoslav Republic of)  (MKD)</option>
+	<option value="Madagascar">Madagascar  (MDG)</option>
+	<option value="Malawi">Malawi  (MWI)</option>
+	<option value="Malaysia">Malaysia  (MYS)</option>
+	<option value="Maldives">Maldives  (MDV)</option>
+	<option value="Mali">Mali  (MLI)</option>
+	<option value="Malta">Malta  (MLT)</option>
+	<option value="Marshall Islands">Marshall Islands  (MHL)</option>
+	<option value="Martinique">Martinique  (MTQ)</option>
+	<option value="Mauritania">Mauritania  (MRT)</option>
+	<option value="Mauritius">Mauritius  (MUS)</option>
+	<option value="Mayotte">Mayotte  (MYT)</option>
+	<option value="Mexico">Mexico  (MEX)</option>
+	<option value="Micronesia (Federated States of)">Micronesia (Federated States of)  (FSM)</option>
+	<option value="Moldova (the Republic of)">Moldova (the Republic of)  (MDA)</option>
+	<option value="Monaco">Monaco  (MCO)</option>
+	<option value="Mongolia">Mongolia  (MNG)</option>
+	<option value="Montenegro">Montenegro  (MNE)</option>
+	<option value="Montserrat">Montserrat  (MSR)</option>
+	<option value="Morocco">Morocco  (MAR)</option>
+	<option value="Mozambique">Mozambique  (MOZ)</option>
+	<option value="Myanmar">Myanmar  (MMR)</option>
+	<option value="Namibia">Namibia  (NAM)</option>
+	<option value="Nauru">Nauru  (NRU)</option>
+	<option value="Nepal">Nepal  (NPL)</option>
+	<option value="Netherlands">Netherlands  (NLD)</option>
+	<option value="New Caledonia">New Caledonia  (NCL)</option>
+	<option value="New Zealand">New Zealand  (NZL)</option>
+	<option value="Nicaragua">Nicaragua  (NIC)</option>
+	<option value="Niger">Niger  (NER)</option>
+	<option value="Nigeria">Nigeria  (NGA)</option>
+	<option value="Niue">Niue  (NIU)</option>
+	<option value="Norfolk Island">Norfolk Island  (NFK)</option>
+	<option value="Northern Mariana Islands">Northern Mariana Islands  (MNP)</option>
+	<option value="Norway">Norway  (NOR)</option>
+	<option value="Oman">Oman  (OMN)</option>
+	<option value="Pakistan">Pakistan  (PAK)</option>
+	<option value="Palau">Palau  (PLW)</option>
+	<option value="Palestine, State of">Palestine, State of  (PSE)</option>
+	<option value="Panama">Panama  (PAN)</option>
+	<option value="Papua New Guinea">Papua New Guinea  (PNG)</option>
+	<option value="Paraguay">Paraguay  (PRY)</option>
+	<option value="Peru">Peru  (PER)</option>
+	<option value="Philippines">Philippines  (PHL)</option>
+	<option value="Pitcairn">Pitcairn  (PCN)</option>
+	<option value="Poland">Poland  (POL)</option>
+	<option value="Portugal">Portugal  (PRT)</option>
+	<option value="Puerto Rico">Puerto Rico  (PRI)</option>
+	<option value="Qatar">Qatar  (QAT)</option>
+	<option value="Réunion">R&#233;union  (REU)</option>
+	<option value="Romania">Romania  (ROU)</option>
+	<option value="Russian Federation">Russian Federation  (RUS)</option>
+	<option value="Rwanda">Rwanda  (RWA)</option>
+	<option value="Saint Barthélemy">Saint Barth&#233;lemy  (BLM)</option>
+	<option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha  (SHN)</option>
+	<option value="Saint Kitts and Nevis">Saint Kitts and Nevis  (KNA)</option>
+	<option value="Saint Lucia">Saint Lucia  (LCA)</option>
+	<option value="Saint Martin (French part)">Saint Martin (French part)  (MAF)</option>
+	<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon  (SPM)</option>
+	<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines  (VCT)</option>
+	<option value="Samoa">Samoa  (WSM)</option>
+	<option value="San Marino">San Marino  (SMR)</option>
+	<option value="Sao Tome and Principe">Sao Tome and Principe  (STP)</option>
+	<option value="Saudi Arabia">Saudi Arabia  (SAU)</option>
+	<option value="Senegal">Senegal  (SEN)</option>
+	<option value="Serbia">Serbia  (SRB)</option>
+	<option value="Seychelles">Seychelles  (SYC)</option>
+	<option value="Sierra Leone">Sierra Leone  (SLE)</option>
+	<option value="Singapore">Singapore  (SGP)</option>
+	<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)  (SXM)</option>
+	<option value="Slovakia">Slovakia  (SVK)</option>
+	<option value="Slovenia">Slovenia  (SVN)</option>
+	<option value="Solomon Islands">Solomon Islands  (SLB)</option>
+	<option value="Somalia">Somalia  (SOM)</option>
+	<option value="South Africa">South Africa  (ZAF)</option>
+	<option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands  (SGS)</option>
+	<option value="South Sudan">South Sudan  (SSD)</option>
+	<option value="Spain">Spain  (ESP)</option>
+	<option value="Sri Lanka">Sri Lanka  (LKA)</option>
+	<option value="Sudan">Sudan  (SDN)</option>
+	<option value="Suriname">Suriname  (SUR)</option>
+	<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen  (SJM)</option>
+	<option value="Swaziland">Swaziland  (SWZ)</option>
+	<option value="Sweden">Sweden  (SWE)</option>
+	<option value="Switzerland">Switzerland  (CHE)</option>
+	<option value="Syrian Arab Republic">Syrian Arab Republic  (SYR)</option>
+	<option value="Taiwan (Province of China)">Taiwan (Province of China)  (TWN)</option>
+	<option value="Tajikistan">Tajikistan  (TJK)</option>
+	<option value="Tanzania, United Republic of">Tanzania, United Republic of  (TZA)</option>
+	<option value="Thailand">Thailand  (THA)</option>
+	<option value="Timor-Leste">Timor-Leste  (TLS)</option>
+	<option value="Togo">Togo  (TGO)</option>
+	<option value="Tokelau">Tokelau  (TKL)</option>
+	<option value="Tonga">Tonga  (TON)</option>
+	<option value="Trinidad and Tobago">Trinidad and Tobago  (TTO)</option>
+	<option value="Tunisia">Tunisia  (TUN)</option>
+	<option value="Turkey">Turkey  (TUR)</option>
+	<option value="Turkmenistan">Turkmenistan  (TKM)</option>
+	<option value="Turks and Caicos Islands">Turks and Caicos Islands  (TCA)</option>
+	<option value="Tuvalu">Tuvalu  (TUV)</option>
+	<option value="Uganda">Uganda  (UGA)</option>
+	<option value="Ukraine">Ukraine  (UKR)</option>
+	<option value="United Arab Emirates">United Arab Emirates  (ARE)</option>
+	<option value="United Kingdom of Great Britain and Northern Ireland">United Kingdom of Great Britain and Northern Ireland  (GBR)</option>
+	<option value="United States">United States  (USA)</option>
+	<option value="United States Minor Outlying Islands">United States Minor Outlying Islands  (UMI)</option>
+	<option value="Uruguay">Uruguay  (URY)</option>
+	<option value="Uzbekistan">Uzbekistan  (UZB)</option>
+	<option value="Vanuatu">Vanuatu  (VUT)</option>
+	<option value="Venezuela (Bolivarian Republic of)">Venezuela (Bolivarian Republic of)  (VEN)</option>
+	<option value="Viet Nam">Viet Nam  (VNM)</option>
+	<option value="Virgin Islands (British)">Virgin Islands (British)  (VGB)</option>
+	<option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)  (VIR)</option>
+	<option value="Wallis and Futuna">Wallis and Futuna  (WLF)</option>
+	<option value="Western Sahara*">Western Sahara*  (ESH)</option>
+	<option value="Yemen">Yemen  (YEM)</option>
+	<option value="Zambia">Zambia  (ZMB)</option>
+	<option value="Zimbabwe">Zimbabwe  (ZWE)</option>
+
+</select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" name="hdncountryname" id="hdncountryname" />
+                                        <input type="hidden" name="hdncountrycode" id="hdncountrycode" />
+                                        <input name="txt_mobile" type="text" autocomplete="off" maxlength="15" id="txt_mobile" class="form-control" placeholder="Enter Your Whatsapp Number" />
+                                    </div>
+
+                                    <div class="form-group mb-3" style="display: none;">
+                                        <select name="ddlIndustry" id="ddlIndustry" class="form-control" onchange="showothers()">
+	<option value="">Select Industry</option>
+	<option value="Real Estate">Real Estate</option>
+	<option value="Human Resources">Human Resources</option>
+	<option value="Travel">Travel</option>
+	<option value="Banking">Banking</option>
+	<option value="Insurance">Insurance</option>
+	<option value="Mortgage">Mortgage</option>
+	<option value="Debt Collection">Debt Collection</option>
+	<option value="Others">Others (Please specify)</option>
+
+</select>
+                                    </div>
+                                    <div class="form-group mb-3" id="divOther" style="display: none;">
+                                        <input name="txtIndustryOther" type="text" autocomplete="off" maxlength="500" id="txtIndustryOther" class="form-control" placeholder="Others (Please specify)" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="mt-4">
+                                            <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LeHDLgqAAAAAFtL9CJc9yfWlx9cBJCtr9XtgsXx"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-1">
+                                        <div class="checkbox p-0">
+                                            <input id="checkbox-signup" type="checkbox" onclick="getreturn();" />
+                                            <label class="text-muted" for="checkbox-signup">I accept <a href="https://www.getcalley.com/terms-of-services/" target="blank">Terms and Conditions</a></label>
+                                        </div>
+
+                                        <input type="submit" name="btnSignUp" value="Sign Up" onclick="return validation();" id="btnSignUp" class="btn btn-primary btn-block w-100" />
+                                        <input name="hdnCode" type="hidden" id="hdnCode" />
+                                        <input name="hd_terms" type="hidden" id="hd_terms" />
+
+                                    </div>
+                                    <p class="mt-3 mb-1 text-center">
+                                        OR
+                                    </p>
+
+                                    <div class="form-group mb-1">
+                                        <a onclick="ProcessBtn();" id="lbtnRegister" class="btn-gmail" href="javascript:__doPostBack(&#39;lbtnRegister&#39;,&#39;&#39;)"><img src="/images/google-sign.png" width="20" style="margin-right:10px;" /><span class="google-text">Sign Up with Google</span></a>
+                                    </div>
+
+                                    <div class="form-group mb-1" style="display:none">
+                                        <a onclick="ProcessBtn();" id="lbtnOutlookRegister" class="btn-gmail" href="javascript:__doPostBack(&#39;lbtnOutlookRegister&#39;,&#39;&#39;)"><img src="/images/outlook-sign.jpg" width="20" style="margin-right:10px;" /><span class="google-text">Sign Up with Outlook</span></a>
+                                    </div>
+
+                                </div>
+
+                                <div class="theme-form" id="divNoRegistrationForm" style="display: none;">
+                                    <h4>Enable JavaScript to Proceed</h4>
+                                    <p>It seems that JavaScript is disabled on your browser. To continue creating your account and using Calley - Automatic Call Dialer, please enable JavaScript.</p>
+                                </div>
+                            </div>
+                            <div class="login-main" style="margin-top:20px;">
+                                <h6 class="text-center or">Or Download Mobile App</h6>
+                                    <div class="social mt-4">
+                                        <div class="btn-showcase">
+                                            <a class="" href="http://bit.ly/2XPUgQe" target="_blank">
+                                                <img src="assets/images/play-store.png">
+                                            </a>
+                                            <a class="" href="https://apple.co/30LP2lk" target="_blank">
+                                                <img src="assets/images/app-store.png">
+                                            </a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <p id="loginurl" class="mt-3 mb-1 text-center">
+                                Already have an account?
+                      <a id="cmdSignIn" class="ms-2" href="javascript:__doPostBack(&#39;cmdSignIn&#39;,&#39;&#39;)">Sign In</a>
+                            </p>
+                        </div>
+                    </div>
+                    <footer class="footer before_login">
+                        2026 © GetCalley.com
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Google Tag Manager (noscript) -->
+        
+
+        
+    </form>
+    
+    <script>
+        var input = document.querySelector("#txt_mobile");
+        //window.intlTelInput(input, {
+
+        //    utilsScript: "Scripts/utils.js",
+        //});
+
+        var iti = null;
+        jq(document).ready(function () {
+            iti = intlTelInput(input, {
+                initialCountry: "auto",
+                //utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.20/build/js/utils.js",
+                utilsScript: "js/IntlTellInput_utils.js",
+                geoIpLookup: function (success, failure) {
+                    success("IN");
+                },
+                formatAsYouType: false,
+                //initialValue: "+919090909090"
+            });
+
+            
+        });
+
+        jq('#togglepass').click(function () {
+            jq('#togglepass').toggleClass('show');
+            var input = jq("#txtPassword");
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        })
+
+        function _isAlphabet() {
+            var regex = new RegExp("^[a-zA-Z _-]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+    </script>
+
+
+
+    <style>
+        a.btn-gmail {
+                border: 1px solid #ccc;
+                width: 100%;
+                display: block;
+                text-align: center;
+                border-radius: 2px;
+                margin-top: 10px;
+                background:#fff;
+                padding: 10px;
+            }
+
+                .btn-gmail:hover {
+                    background-color: #f7f7f7;
+                    text-decoration: none;
+                    color:#000;
+                }
+
+                .btn-gmail:active {
+                    transform: scale(0.98);
+                }
+    </style>
+    
+<script 
+      type="text/javascript"
+      src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+      id="aisensy-wa-widget"
+      widget-id="aaatfx">
+</script>
+
+
+<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
+
+
+
+    <noscript>
+        
+        <style>
+            #divNoRegistrationForm {
+                display: block !important;
+            }
+
+            #divRegistrationForm {
+                display: none !important;
+            }
+
+            a.btn-gmail {
+                border: 1px solid #ccc;
+                width: 100%;
+                display: block;
+                text-align: center;
+                border-radius: 2px;
+                margin-top: 10px;
+                background:#fff;
+            }
+
+                .btn-gmail:hover {
+                    background-color: #f7f7f7;
+                    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+                    text-decoration: none;
+                }
+
+                .btn-gmail:active {
+                    transform: scale(0.98);
+                }
+
+            .google-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .google-text {
+                line-height: 20px;
+            }
+        </style>
+    </noscript>
+</body>
+</html>

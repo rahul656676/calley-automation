@@ -1,0 +1,6 @@
+com\calley\automation\tests\DebugMenuTest.class
+com\calley\automation\tests\AddAgentTest.class
+com\calley\automation\tests\PowerImportCsvUploadTest.class
+com\calley\automation\tests\RegistrationTest.class
+com\calley\automation\tests\BaseTest.class
+com\calley\automation\tests\LoginTest.class
