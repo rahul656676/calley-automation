@@ -48,10 +48,9 @@ public class AddAgentTest extends BaseTest {
 
         System.out.println("Current URL After Login : " + driver.getCurrentUrl());
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ignored) {
-        }
+        // Wait for dashboard to load completely before proceeding
+        new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(org.openqa.selenium.support.ui.ExpectedConditions.urlContains("dashboard"));
     }
 
     @Test(dataProvider = "agentData", priority = 3)
